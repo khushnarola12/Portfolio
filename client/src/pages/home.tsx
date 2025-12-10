@@ -8,10 +8,12 @@ import EducationSection from "@/components/EducationSection";
 import ToolsSection from "@/components/ToolsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import AnimatedCursor from "@/components/AnimatedCursor";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground cursor-none">
+      <AnimatedCursor />
       <Navigation />
       <main>
         <HeroSection />
