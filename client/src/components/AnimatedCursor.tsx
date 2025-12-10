@@ -69,41 +69,41 @@ export default function AnimatedCursor() {
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
         animate={{
-          x: mousePosition.x - 6,
-          y: mousePosition.y - 6,
+          x: mousePosition.x - 10,
+          y: mousePosition.y - 10,
           scale: isHovering ? 0.5 : 1,
           opacity: isVisible ? 1 : 0,
         }}
         transition={{
           type: "spring",
-          stiffness: 500,
-          damping: 28,
-          mass: 0.5,
+          stiffness: 800,
+          damping: 35,
+          mass: 0.3,
         }}
       >
-        <div className="w-3 h-3 bg-white rounded-full" />
+        <div className="w-5 h-5 bg-white rounded-full" />
       </motion.div>
 
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9998]"
         animate={{
-          x: mousePosition.x - 20,
-          y: mousePosition.y - 20,
-          scale: isHovering ? 1.5 : 1,
+          x: mousePosition.x - 32,
+          y: mousePosition.y - 32,
+          scale: isHovering ? 2 : 1,
           opacity: isVisible ? 1 : 0,
         }}
         transition={{
           type: "spring",
-          stiffness: 150,
-          damping: 15,
-          mass: 0.1,
+          stiffness: 200,
+          damping: 20,
+          mass: 0.2,
         }}
       >
         <div 
-          className="w-10 h-10 rounded-full border-2 border-purple-500/50"
+          className="w-16 h-16 rounded-full border-2 border-purple-500"
           style={{
             background: isHovering 
-              ? "radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%)" 
+              ? "radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%)" 
               : "transparent",
           }}
         />
@@ -112,21 +112,44 @@ export default function AnimatedCursor() {
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9997]"
         animate={{
-          x: mousePosition.x - 40,
-          y: mousePosition.y - 40,
+          x: mousePosition.x - 60,
+          y: mousePosition.y - 60,
+          scale: isHovering ? 1.5 : 1,
+          opacity: isVisible ? 0.5 : 0,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 80,
+          damping: 25,
+          mass: 0.8,
+        }}
+      >
+        <div 
+          className="w-[120px] h-[120px] rounded-full"
+          style={{
+            background: "radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.1) 40%, transparent 70%)",
+          }}
+        />
+      </motion.div>
+
+      <motion.div
+        className="fixed top-0 left-0 pointer-events-none z-[9996]"
+        animate={{
+          x: mousePosition.x - 100,
+          y: mousePosition.y - 100,
           opacity: isVisible ? 0.3 : 0,
         }}
         transition={{
           type: "spring",
-          stiffness: 50,
-          damping: 20,
-          mass: 0.5,
+          stiffness: 30,
+          damping: 30,
+          mass: 1.5,
         }}
       >
         <div 
-          className="w-20 h-20 rounded-full"
+          className="w-[200px] h-[200px] rounded-full"
           style={{
-            background: "radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 30%, transparent 60%)",
           }}
         />
       </motion.div>
