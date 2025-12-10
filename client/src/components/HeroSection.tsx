@@ -1,6 +1,55 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Download, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+
+const greetings = [
+  { text: "Hello, I'm", lang: "English" },
+  { text: "Namaste, Main hoon", lang: "Hindi" },
+  { text: "Hola, Soy", lang: "Spanish" },
+  { text: "Bonjour, Je suis", lang: "French" },
+  { text: "Hallo, Ich bin", lang: "German" },
+  { text: "Ciao, Sono", lang: "Italian" },
+  { text: "Olá, Eu sou", lang: "Portuguese" },
+  { text: "Konnichiwa, Watashi wa", lang: "Japanese" },
+  { text: "Annyeonghaseyo, Jeoneun", lang: "Korean" },
+  { text: "Nǐ hǎo, Wǒ shì", lang: "Chinese" },
+];
+
+function TypewriterText() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentGreeting = greetings[currentIndex].text;
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (displayText.length < currentGreeting.length) {
+          setDisplayText(currentGreeting.slice(0, displayText.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        if (displayText.length > 0) {
+          setDisplayText(displayText.slice(0, -1));
+        } else {
+          setIsDeleting(false);
+          setCurrentIndex((prev) => (prev + 1) % greetings.length);
+        }
+      }
+    }, isDeleting ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentIndex]);
+
+  return (
+    <span className="font-mono text-sm md:text-base text-muted-foreground">
+      {displayText}
+      <span className="animate-pulse">|</span>
+    </span>
+  );
+}
 
 export default function HeroSection() {
   const scrollToProjects = () => {
@@ -30,20 +79,21 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="h-8 mb-4"
+          data-testid="text-greeting"
         >
-          <p className="font-mono text-sm text-muted-foreground mb-4" data-testid="text-greeting">
-            Hello, I'm
-          </p>
+          <TypewriterText />
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+          className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight"
+          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           data-testid="text-hero-name"
         >
-          <span className="bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
             Khushal Narola
           </span>
         </motion.h1>

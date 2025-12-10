@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground cursor-none">
       <AnimatedCursor />
-      <Navigation />
       <main>
         <HeroSection />
         <AboutSection />
