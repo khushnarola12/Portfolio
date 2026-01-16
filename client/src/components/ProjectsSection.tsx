@@ -23,18 +23,18 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: "claude-clone",
-    title: "Claude Clone",
+    id: "vibe-ai",
+    title: "Vibe AI",
     description: "Advanced AI Code Platform with secure E2B sandbox-based code execution and AI reasoning.",
-    longDescription: "Built a production-grade AI chat and code execution platform inspired by Claude. Key features include secure E2B sandbox-based code execution, automated background job handling, long-running task orchestration, and advanced AI reasoning for code understanding and generation.",
+    longDescription: "Built a production-grade AI chat and code execution platform. Key features include secure E2B sandbox-based code execution, automated background job handling, long-running task orchestration, and advanced AI reasoning for code understanding and generation.",
     image: claudeCloneImg,
     technologies: ["Next.js", "E2B", "LLM", "TypeScript", "Tailwind"],
     github: "https://github.com/khushnarola12/Vibe",
     live: "https://vibe-eta-lime.vercel.app/",
   },
   {
-    id: "spotify-clone",
-    title: "Spotify Clone",
+    id: "melodify",
+    title: "Melodify",
     description: "AI-Enhanced Music Platform with real-time streaming and playlist recommendations.",
     longDescription: "Full-stack music streaming application built with Next.js. Includes secure authentication, real-time audio streaming, and an AI-driven playlist recommendation engine.",
     image: spotifyCloneImg,
@@ -43,8 +43,8 @@ const projects: Project[] = [
     live: "https://spotify-clone-gamma-rust.vercel.app/",
   },
   {
-    id: "dalle-clone",
-    title: "DALL-E Clone",
+    id: "visionary-ai",
+    title: "Visionary AI",
     description: "AI Image Generation Platform with prompt-based creation and history tracking.",
     longDescription: "AI image-generation web application using Next.js and OpenAI Image API. Includes prompt-based image creation, image history, and modern UI.",
     image: dalleCloneImg,
