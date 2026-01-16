@@ -39,9 +39,7 @@ export default function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
-        <div className="flex-1 hidden md:block" />
-        
+      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-center gap-4">
         <div className="hidden md:flex items-center gap-1 flex-wrap">
           {navItems.map((item) => (
             <Button
@@ -56,18 +54,15 @@ export default function Navigation() {
           ))}
         </div>
 
-        <div className="flex-1 flex justify-end items-center gap-2">
-          <ThemeToggle />
-          <Button
-            size="icon"
-            variant="ghost"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            data-testid="button-mobile-menu"
-          >
-            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-        </div>
+        <Button
+          size="icon"
+          variant="ghost"
+          className="md:hidden"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          data-testid="button-mobile-menu"
+        >
+          {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </Button>
       </nav>
 
       {isMobileMenuOpen && (
