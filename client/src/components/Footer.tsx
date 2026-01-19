@@ -6,7 +6,7 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: Github, href: "https://github.com/khushnarola12", label: "GitHub" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/khushal-narola", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/khushal-narola-037b8623a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", label: "LinkedIn" },
     { icon: Mail, href: "mailto:khushnarola08@gmail.com", label: "Email" },
   ];
 

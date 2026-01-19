@@ -84,7 +84,7 @@ export default function ContactSection() {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/khushal-narola" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/khushal-narola-037b8623a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { icon: Github, label: "GitHub", href: "https://github.com/khushnarola12" },
   ];
 
